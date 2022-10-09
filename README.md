@@ -1,6 +1,6 @@
 # MontyHallSimulation
 Simulation for Monty Hall's problem, calculatig probabilities.
-The Monty Hall problem is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show Let's Make a Deal and named after its original host, Monty Hall. The problem was originally posed (and solved) in a letter by Steve Selvin to the American Statistician in 1975.[1][2] It became famous as a question from reader Craig F. Whitaker's letter quoted in Marilyn vos Savant's "Ask Marilyn" column in Parade magazine in 1990:[3]
+The Monty Hall problem is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show Let's Make a Deal and named after its original host, Monty Hall. The problem was originally posed (and solved) in a letter by Steve Selvin to the American Statistician in 1975. It became famous as a question from reader Craig F. Whitaker's letter quoted in Marilyn vos Savant's "Ask Marilyn" column in Parade magazine in 1990.
 
 Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
@@ -28,8 +28,21 @@ When the player first makes their choice, there is a
 3
  chance of the car being behind the door the contestant chose initially.
 
-The given probabilities depend on specific assumptions about how the host and contestant choose their doors. A key insight is that, under these standard conditions, there is more information about doors 2 and 3 than was available at the beginning of the game when door 1 was chosen by the player: the host's deliberate action adds value to the door he did not choose to eliminate, but not to the one chosen by the contestant originally. Another insight is that switching doors is a different action from choosing between the two remaining doors at random, as the first action uses the previous information and the latter does not. Other possible behaviors of the host than the one described can reveal different additional information, or none at all, and yield different probabilities.
 
-Many readers of vos Savant's column refused to believe switching is beneficial and rejected her explanation. After the problem appeared in Parade, approximately 10,000 readers, including nearly 1,000 with PhDs, wrote to the magazine, most of them calling vos Savant wrong.[4] Even when given explanations, simulations, and formal mathematical proofs, many people still did not accept that switching is the best strategy.[5] Paul Erdős, one of the most prolific mathematicians in history, remained unconvinced until he was shown a computer simulation demonstrating vos Savant's predicted result.[6]
 
-The problem is a paradox of the veridical type, because the solution is so counterintuitive it can seem absurd but is nevertheless demonstrably true. The Monty Hall problem is mathematically closely related to the earlier Three Prisoners problem and to the much older Bertrand's box paradox.
+
+Under the standard assumptions, the probability of winning the car after switching is 
+2
+/
+3
+
+
+The key to this solution is the behavior of the host. Ambiguities in the Parade version do not explicitly define the protocol of the host. However, Marilyn vos Savant's solution printed alongside Whitaker's question implies, and both Selven and vos Savant explicitly define, the role of the host as follows:
+
+   **The host must always open a door that was not picked by the contestant.**
+
+   **The host must always open a door to reveal a goat and never the car.**
+
+   **The host must always offer the chance to switch between the originally chosen door and the remaining closed door.**
+
+When any of these assumptions is varied, it can change the probability of winning by switching doors as detailed in the section below. It is also typically presumed that the car is initially hidden randomly behind the doors and that, if the player initially picks the car, then the host's choice of which goat-hiding door to open is random. Some authors, independently or inclusively, assume that the player's initial choice is random as well.
